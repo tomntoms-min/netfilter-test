@@ -198,8 +198,6 @@ int main(int argc, char **argv) {
 
     fd = nfq_fd(h);
 
-    printf("초기화 완료. 다음 iptables 명령어를 사용하세요:\n");
-    printf("sudo iptables -A OUTPUT -p tcp --dport 80 -j NFQUEUE --queue-num 0\n");
 
     for (;;) {
         if ((rv = recv(fd, buf, sizeof(buf), 0)) >= 0) {
